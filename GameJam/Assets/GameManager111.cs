@@ -10,11 +10,11 @@ public class GameManager111 : MonoBehaviour
     private short gardenHP;
 
     [Header("Gameobjects")]
-    [SerializeField] private Text moneyText;
+    private Text moneyText;
 
     [Header("Input Binds")]
-    [SerializeField] private string addMoneyKey = "AddMoney";
-    [SerializeField] private string spendMoneyKey = "SpendMoney";
+    private string addMoneyKey = "AddMoney";
+    private string spendMoneyKey = "SpendMoney";
     void Start()
     {
         if (moneyText == null)
