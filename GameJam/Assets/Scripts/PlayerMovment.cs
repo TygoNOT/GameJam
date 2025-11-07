@@ -1,30 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMovment : MonoBehaviour
 {
     [Header("Attribute")]
     [SerializeField] protected float speed = 5;
     [SerializeField] protected Rigidbody2D rb;
-    protected int FacingDirection = 1;
+    [SerializeField] private Animator animator;
+
+    private Vector2 moveInput;
+    private Vector2 lastMoveDir = Vector2.down;
+
+    private void Update()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        moveInput = new Vector2(horizontal, vertical).normalized;
+       
+        if (moveInput != Vector2.zero)
+        {
+            lastMoveDir = moveInput;
+        }
+
+        UpdateAnimator();
+    }
 
     private void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        if (horizontal > 0 && transform.localScale.x < 0 || horizontal < 0 && transform.localScale.x > 0)
-        {
-            Flip();
-        }
-
-        rb.velocity = new Vector2(horizontal, vertical) * speed;
+        rb.velocity = moveInput * speed;
     }
 
-    private void Flip()
+    private void UpdateAnimator()
     {
-        FacingDirection *= -1;
-        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        animator.SetFloat("MoveX", moveInput.x);
+        animator.SetFloat("MoveY", moveInput.y);
+        animator.SetFloat("LastMoveX", lastMoveDir.x);
+        animator.SetFloat("LastMoveY", lastMoveDir.y);
+        animator.SetBool("IsMoving", moveInput != Vector2.zero);
     }
+
 }
