@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 03dfc59667ee895468bcfcb9e83bf128
+guid: 6ce5f9df35b8c3e409ee7bc2cca4c93d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 70
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Idle_0
+      name: Tile-SpringProps_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 216
-        width: 36
-        height: 63
+        x: 5
+        y: 37
+        width: 38
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cbfa526b37b6f44d9b863d28bdd63fb
-      internalID: -1726857445
+      spriteID: 280a3d1f1c17689419bb52ea6e29eec9
+      internalID: 1051742416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_1
+      name: Tile-SpringProps_1
       rect:
         serializedVersion: 2
-        x: 90
-        y: 216
-        width: 36
-        height: 60
+        x: 53
+        y: 37
+        width: 38
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87fd2d451b2ceb948b5b12bc7e1def5a
-      internalID: -1673213522
+      spriteID: 21ce02c9f68179644bef0486ead18acc
+      internalID: -859503777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_2
+      name: Tile-SpringProps_2
       rect:
         serializedVersion: 2
-        x: 162
-        y: 216
-        width: 36
-        height: 60
+        x: 101
+        y: 37
+        width: 38
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c9ae416586a3114da483150d77d0d8a
-      internalID: -877538623
+      spriteID: 75d316fdb6b722044b2ecdf26d7ed44a
+      internalID: -1708273806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_3
+      name: Tile-SpringProps_3
       rect:
         serializedVersion: 2
-        x: 234
-        y: 216
-        width: 36
-        height: 63
+        x: 152
+        y: 37
+        width: 35
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 490250af2c1b71f458d0bc0023da85dd
-      internalID: -941906115
+      spriteID: 9f96298a97b7ba340951fbf982625c50
+      internalID: 518592036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_4
+      name: Tile-SpringProps_4
       rect:
         serializedVersion: 2
-        x: 18
-        y: 144
-        width: 36
-        height: 63
+        x: 3
+        y: 4
+        width: 26
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0e1c85487d812e47af5c1636d4b320c
-      internalID: 1268418094
+      spriteID: 68849bdff6eec984bbac0fac7a932ce7
+      internalID: 49528761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_5
+      name: Tile-SpringProps_5
       rect:
         serializedVersion: 2
-        x: 90
-        y: 144
-        width: 36
-        height: 60
+        x: 35
+        y: 4
+        width: 26
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f63c5cf5a6af1046842a30f0db0069b
-      internalID: -731374730
+      spriteID: 4142d89dbc9b38249b39b5c408dfb1b8
+      internalID: -1273262606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_6
+      name: Tile-SpringProps_6
       rect:
         serializedVersion: 2
-        x: 162
-        y: 144
-        width: 36
-        height: 60
+        x: 67
+        y: 4
+        width: 26
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef7c49e56fb34fd4aa1fbb0bba0fa2ab
-      internalID: 1759592345
+      spriteID: 1a375586a97693a4fa98dfd85e95c027
+      internalID: 943435633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_7
+      name: Tile-SpringProps_7
       rect:
         serializedVersion: 2
-        x: 234
-        y: 144
-        width: 36
-        height: 63
+        x: 96
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e65f7f835da17b24ea69295a4fc7432d
-      internalID: 859084737
+      spriteID: 1fced619caa6cf54ab72557379e71971
+      internalID: -1496264020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_8
+      name: Tile-SpringProps_8
       rect:
         serializedVersion: 2
-        x: 18
-        y: 72
-        width: 36
-        height: 63
+        x: 118
+        y: 16
+        width: 21
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 418a07812a154d642a22ea0dce17867e
-      internalID: 1168704688
+      spriteID: 1abc8245efb49874a9b7c2277fc3383b
+      internalID: 1392594238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_9
+      name: Tile-SpringProps_9
       rect:
         serializedVersion: 2
-        x: 90
-        y: 72
-        width: 36
-        height: 60
+        x: 146
+        y: 19
+        width: 12
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c65c65958a3d0854b875eda573c8c13f
-      internalID: -449345868
+      spriteID: 88eb1ba19a9735a46b5aa0a9b6360782
+      internalID: -1985912364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_10
+      name: Tile-SpringProps_10
       rect:
         serializedVersion: 2
-        x: 162
-        y: 72
-        width: 36
-        height: 60
+        x: 163
+        y: 18
+        width: 10
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,20 +347,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b04aaf5cac3f974aa290965713f139f
-      internalID: 1121839236
+      spriteID: 0b7c6bae5cfa35149b51810b67351f82
+      internalID: 2021366430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_11
+      name: Tile-SpringProps_11
       rect:
         serializedVersion: 2
-        x: 234
-        y: 72
-        width: 36
-        height: 63
+        x: 178
+        y: 18
+        width: 11
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,20 +368,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d8141938321db8488c722cfbd75bceb
-      internalID: -2094034462
+      spriteID: c938ea2fc19eefe4ea3cc576e9bb8617
+      internalID: 168002712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_12
+      name: Tile-SpringProps_12
       rect:
         serializedVersion: 2
-        x: 18
-        y: 0
-        width: 36
-        height: 63
+        x: 100
+        y: 2
+        width: 8
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,20 +389,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70b414b4ccaff2b4a94f4d81a477010d
-      internalID: 1789699767
+      spriteID: 0768a55c2077c8f4eb7e5956b4220824
+      internalID: -1198251921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_13
+      name: Tile-SpringProps_13
       rect:
         serializedVersion: 2
-        x: 90
-        y: 0
-        width: 36
-        height: 60
+        x: 113
+        y: 2
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,20 +410,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 795f80115dad7744bae39571088df839
-      internalID: -1064654871
+      spriteID: 8089aa74a9f6e7741898ce7eaca54d5f
+      internalID: -2086189307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_14
+      name: Tile-SpringProps_14
       rect:
         serializedVersion: 2
-        x: 162
-        y: 0
-        width: 36
-        height: 60
+        x: 131
+        y: 3
+        width: 9
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,29 +431,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1999b9c580a34de4aae53adb0dce645d
-      internalID: 1511112943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Idle_15
-      rect:
-        serializedVersion: 2
-        x: 234
-        y: 0
-        width: 36
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5daf829881c8cd49a5ba812229c0bc6
-      internalID: -145233669
+      spriteID: 82f10e3d5cace104c9bec11a902c095a
+      internalID: -274169224
       vertices: []
       indices: 
       edges: []
@@ -469,22 +448,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Idle_0: -1726857445
-      Player_Idle_1: -1673213522
-      Player_Idle_10: 1121839236
-      Player_Idle_11: -2094034462
-      Player_Idle_12: 1789699767
-      Player_Idle_13: -1064654871
-      Player_Idle_14: 1511112943
-      Player_Idle_15: -145233669
-      Player_Idle_2: -877538623
-      Player_Idle_3: -941906115
-      Player_Idle_4: 1268418094
-      Player_Idle_5: -731374730
-      Player_Idle_6: 1759592345
-      Player_Idle_7: 859084737
-      Player_Idle_8: 1168704688
-      Player_Idle_9: -449345868
+      Tile-SpringProps_0: 1051742416
+      Tile-SpringProps_1: -859503777
+      Tile-SpringProps_10: 2021366430
+      Tile-SpringProps_11: 168002712
+      Tile-SpringProps_12: -1198251921
+      Tile-SpringProps_13: -2086189307
+      Tile-SpringProps_14: -274169224
+      Tile-SpringProps_2: -1708273806
+      Tile-SpringProps_3: 518592036
+      Tile-SpringProps_4: 49528761
+      Tile-SpringProps_5: -1273262606
+      Tile-SpringProps_6: 943435633
+      Tile-SpringProps_7: -1496264020
+      Tile-SpringProps_8: 1392594238
+      Tile-SpringProps_9: -1985912364
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
