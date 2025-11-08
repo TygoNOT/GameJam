@@ -147,14 +147,12 @@ public class BaseEnemyScript : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("I am starting to attack");
         isMoving = false;
         isAttacking = true;
         Collider2D target = CheckInAttackRange();
         var damageable = target.GetComponent<DefenseArea>();
         if (damageable != null)
         {
-            Debug.Log("I am attacking");
             damageable.TakeDamage(damagePoints);
         }
 
@@ -166,7 +164,6 @@ public class BaseEnemyScript : MonoBehaviour
         var hits = Physics2D.OverlapCircle(transform.position, attackRange, attackTarget);
         if (hits != null && (hits.CompareTag(targetTagFence) || hits.CompareTag(targetTagGarden)))
         {
-            Debug.Log("Returning not null");
             return hits;
         }
             

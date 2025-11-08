@@ -22,7 +22,6 @@ public class DefenseArea : MonoBehaviour
     {
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        Debug.Log(currentHealth);
 
         if (healthBar != null)
             healthBar.SetHealth(currentHealth);

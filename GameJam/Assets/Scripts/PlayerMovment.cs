@@ -11,7 +11,7 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] private Animator animator;
 
     private Vector2 moveInput;
-    private Vector2 lastMoveDir = Vector2.down;
+    public Vector2 lastMoveDir = Vector2.down;
 
     private void Update()
     {
