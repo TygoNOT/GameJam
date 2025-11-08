@@ -22,6 +22,16 @@ public class BaseEnemyScript : MonoBehaviour
     private GameObject garden;
     private LayerMask attackTarget;
 
+    private void OnEnable()
+    {
+        EnemyWaveManager.aliveEnemies++;
+    }
+
+    private void OnDisable()
+    {
+        EnemyWaveManager.aliveEnemies--;
+    }
+
     void Start()
     {
         myPosition = gameObject.transform.position;
