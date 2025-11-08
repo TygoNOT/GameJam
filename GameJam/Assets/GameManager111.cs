@@ -8,6 +8,8 @@ public class GameManager111 : MonoBehaviour
     private short moneyAmount;
     [SerializeField]
     private short gardenHP;
+    [SerializeField]
+    private short flowerPrice = 20;
 
     [Header("Gameobjects")]
     private Text moneyText;
@@ -57,5 +59,10 @@ public class GameManager111 : MonoBehaviour
     {
         if (moneyText != null)
             moneyText.text = moneyAmount.ToString();
+    }
+
+    public void GetSpendMoneyForShop()
+    {
+        SpentMoney(flowerPrice);
     }
 }
