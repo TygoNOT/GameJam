@@ -6,7 +6,7 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 public class PlayerMovment : MonoBehaviour
 {
     [Header("Attribute")]
-    [SerializeField] protected float speed = 5;
+    [SerializeField] private CharacterStats stats;
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] private Animator animator;
 
@@ -29,7 +29,7 @@ public class PlayerMovment : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = moveInput * speed;
+        rb.velocity = moveInput * stats.playerMovementSpeed;
     }
 
     private void UpdateAnimator()
