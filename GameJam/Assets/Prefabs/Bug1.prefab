@@ -12,10 +12,16 @@ GameObject:
   - component: {fileID: 5448854126994871565}
   - component: {fileID: 4478299763355120177}
   - component: {fileID: 4082359082344640712}
+<<<<<<< Updated upstream
   - component: {fileID: -5932272481743243113}
   m_Layer: 6
   m_Name: Bug1
   m_TagString: Untagged
+=======
+  m_Layer: 6
+  m_Name: Bug1
+  m_TagString: Enemy
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,8 +81,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< Updated upstream
   m_SortingOrder: 0
   m_Sprite: {fileID: -370138930, guid: 3514ec590904cac49933476e51eeaa5f, type: 3}
+=======
+  m_SortingOrder: 7
+  m_Sprite: {fileID: -1734929472, guid: 21e84f0604cf58e41b3c60d98fcd2436, type: 3}
+>>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,11 +110,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65429424a0e519b468e741431a541c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   speedPoints: 5
   damagePoints: 1
   maxHealthPoints: 5
   attackRange: 1
   attackSpeed: 0
+=======
+  speedPoints: 7
+  damagePoints: 1
+  maxHealthPoints: 10
+  attackRange: 1
+  attackSpeed: 2
+  test: {fileID: 0}
+>>>>>>> Stashed changes
   garden: {fileID: 0}
   attackTarget:
     serializedVersion: 2
@@ -153,6 +173,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+<<<<<<< Updated upstream
 --- !u!50 &-5932272481743243113
 Rigidbody2D:
   serializedVersion: 4
@@ -180,3 +201,5 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+=======
+>>>>>>> Stashed changes
