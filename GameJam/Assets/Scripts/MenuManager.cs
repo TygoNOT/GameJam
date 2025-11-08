@@ -20,10 +20,13 @@ public class MenuManager : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] public AudioMixer audioMixer;
+    [SerializeField] private AudioSource buttonClickAudioSource;
+    [SerializeField] private AudioClip buttonClickSound;
 
     private const string PrefMusVolume = "pref_music_volume";
     private const string PrefSfxVolume = "pref_sfx_volume";
     private const string PrefFullscreen = "pref_fullscreen";
+
     void Start()
     {
         float savedMusicVol = PlayerPrefs.HasKey(PrefMusVolume) ? PlayerPrefs.GetFloat(PrefMusVolume) : 1f;
@@ -34,9 +37,9 @@ public class MenuManager : MonoBehaviour
         ApplySFXVolume(savedSfxVol, applyToSlider: false);
         ApplyFullscreen(savedFs);
 
-        playButton.onClick.AddListener(OnPlayClicked);
-        optionsButton.onClick.AddListener(OnOptionsClicked);
-        exitButton.onClick.AddListener(OnExitClicked);
+        playButton.onClick.AddListener(() => OnButtonClicked(OnPlayClicked));
+        optionsButton.onClick.AddListener(() => OnButtonClicked(OnOptionsClicked));
+        exitButton.onClick.AddListener(() => OnButtonClicked(OnExitClicked));
 
         if (musicVolumeSlider != null && sfxVolumeSlider != null)
         {
@@ -51,23 +54,53 @@ public class MenuManager : MonoBehaviour
             fullscreenToggle.isOn = savedFs;
             fullscreenToggle.onValueChanged.AddListener(ApplyFullscreen);
         }
+
+        if (buttonClickAudioSource == null)
+        {
+            buttonClickAudioSource = GetComponent<AudioSource>();
+
+            if (buttonClickAudioSource == null)
+            {
+                buttonClickAudioSource = gameObject.AddComponent<AudioSource>();
+                buttonClickAudioSource.playOnAwake = false;
+            }
+        }
     }
+
+    private void OnButtonClicked(System.Action buttonAction)
+    {
+        PlayButtonClickSound();
+        buttonAction?.Invoke();
+    }
+
+    private void PlayButtonClickSound()
+    {
+        if (buttonClickAudioSource != null && buttonClickSound != null)
+        {
+            buttonClickAudioSource.PlayOneShot(buttonClickSound);
+        }
+    }
+
     void Update()
     {
 
     }
+
     public void OnPlayClicked()
     {
         // SceneManager.LoadScene("GameScene");
     }
+
     public void OnExitClicked()
     {
         Application.Quit();
     }
+
     public void OnOptionsClicked()
     {
         optionsPanel.SetActive(true);
     }
+
     private void OnDestroy()
     {
         if (musicVolumeSlider != null)
@@ -79,21 +112,24 @@ public class MenuManager : MonoBehaviour
         if (fullscreenToggle != null)
             fullscreenToggle.onValueChanged.RemoveListener(ApplyFullscreen);
     }
+
     public void ApplyMusicVolume(float value)
     {
         ApplyMusicVolume(value, applyToSlider: true);
     }
+
     public void ApplySFXVolume(float value)
     {
         ApplySFXVolume(value, applyToSlider: true);
     }
+
     private void ApplyMusicVolume(float value, bool applyToSlider)
     {
         PlayerPrefs.SetFloat(PrefMusVolume, value);
 
         if (audioMixer != null)
         {
-            float dB = Mathf.Log10(value)*20;
+            float dB = Mathf.Log10(value) * 20;
             audioMixer.SetFloat("MusicVolume", dB);
         }
 
@@ -102,6 +138,7 @@ public class MenuManager : MonoBehaviour
 
         PlayerPrefs.Save();
     }
+
     private void ApplySFXVolume(float value, bool applyToSlider)
     {
         PlayerPrefs.SetFloat(PrefSfxVolume, value);
@@ -128,6 +165,7 @@ public class MenuManager : MonoBehaviour
         if (fullscreenToggle != null && fullscreenToggle.isOn != value)
             fullscreenToggle.isOn = value;
     }
+
     public void ToggleFullscreen()
     {
         bool newState = !(fullscreenToggle != null ? fullscreenToggle.isOn : Screen.fullScreen);
