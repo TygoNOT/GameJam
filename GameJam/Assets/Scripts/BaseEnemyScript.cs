@@ -83,6 +83,7 @@ public class BaseEnemyScript : MonoBehaviour
             ChangeTarget();
 
         if (CheckInAttackRange() != null)
+            Attack();
             isMoving = false;
     }
 
