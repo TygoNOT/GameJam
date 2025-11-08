@@ -288,7 +288,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1397350997}
   m_Father: {fileID: 2103557970}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &90664316
@@ -31210,7 +31211,7 @@ GameObject:
   - component: {fileID: 828016758}
   m_Layer: 0
   m_Name: Garden Area
-  m_TagString: Untagged
+  m_TagString: GardenArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76150,7 +76151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2103557970}
+  m_Father: {fileID: 90664315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1397350998
 TilemapRenderer:
@@ -125826,7 +125827,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1397350997}
   - {fileID: 90664315}
   m_Father: {fileID: 349537789}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
