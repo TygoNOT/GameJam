@@ -3293,7 +3293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1222268391}
   gardenBeds:
   - {fileID: 1819581033}
   - {fileID: 1004120211}
