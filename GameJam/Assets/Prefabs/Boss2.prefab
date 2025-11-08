@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5448854126994871565}
   - component: {fileID: 4478299763355120177}
   - component: {fileID: 4082359082344640712}
-  - component: {fileID: 7758411963432252340}
-  - component: {fileID: -7618735227889187943}
+  - component: {fileID: -6919072218566966473}
+  - component: {fileID: -3197243960345703503}
   m_Layer: 6
-  m_Name: Bug1
+  m_Name: Boss2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: -1494926313, guid: fbd7a1ae7ddfecd499f8718db4397e3f, type: 3}
+  m_Sprite: {fileID: -1597013936, guid: f76a560e74883064fbf663367f702e5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,13 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65429424a0e519b468e741431a541c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedPoints: 2
-  damagePoints: 20
-  maxHealthPoints: 25
-  attackRange: 1
+  speedPoints: 4
+  damagePoints: 50
+  maxHealthPoints: 500
+  attackRange: 3
   attackSpeed: 0.5
   test: {fileID: 0}
-  _animator: {fileID: -7618735227889187943}
+  _animator: {fileID: -3197243960345703503}
   garden: {fileID: 0}
   attackTarget:
     serializedVersion: 2
@@ -143,20 +143,20 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0048332214, y: -0.09198004}
+  m_Offset: {x: 0.0045018196, y: 0.0020091534}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.72, y: 0.72}
+    oldSize: {x: 1.6, y: 1.6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.72447777, y: 0.48037934}
+  m_Size: {x: 1.6212206, y: 1.4186482}
   m_EdgeRadius: 0
---- !u!50 &7758411963432252340
+--- !u!50 &-6919072218566966473
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &-7618735227889187943
+--- !u!95 &-3197243960345703503
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ Animator:
   m_GameObject: {fileID: 3002624932717591878}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d4a474c6488a33240aa2824e8d54da9a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 567d9911c9660384b88494eb779789e3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
