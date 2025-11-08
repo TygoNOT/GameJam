@@ -6,21 +6,24 @@ using UnityEngine;
 public class BaseEnemyScript : MonoBehaviour
 {
 
-    private float speedPoints;
-    private float damagePoints;
-    private float maxHealthPoints;
+    [SerializeField] private float speedPoints;
+    [SerializeField] private int damagePoints;
+    [SerializeField] private float maxHealthPoints;
     private float currentHealthPoints;
-    private float attackRange;
+    [SerializeField] private float attackRange;
+    [SerializeField] private float attackSpeed;
     private bool isFenceAlive = false;
     private bool isGardenAlive;
-    private bool isMoving;
+    private bool isMoving = true;
+    private bool isAttacking = false;
 
     private Vector2 myPosition;
     private Vector2 targetPosition;
 
-    private GameObject fence;
-    private GameObject garden;
-    private LayerMask attackTarget;
+    private GameObject? fence = null;
+    public GameObject garden;
+    [SerializeField] private LayerMask attackTarget;
+    private string targetTag = "GardenArea";
 
     private void OnEnable()
     {
@@ -35,6 +38,9 @@ public class BaseEnemyScript : MonoBehaviour
     void Start()
     {
         myPosition = gameObject.transform.position;
+        Debug.Log(myPosition);
+
+        garden = GameObject.FindGameObjectWithTag(targetTag);
 
         if (fence != null)
         {
@@ -56,6 +62,7 @@ public class BaseEnemyScript : MonoBehaviour
             }
 
             targetPosition = closestTarget;
+            Debug.Log(targetPosition);
         }
         else
         {
@@ -74,6 +81,7 @@ public class BaseEnemyScript : MonoBehaviour
             }
 
             targetPosition = closestTarget;
+            Debug.Log(targetPosition);
         }
     }
 
@@ -89,12 +97,16 @@ public class BaseEnemyScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (fence == null && isGardenAlive != true)
+        if (fence == null && garden != null)
             ChangeTarget();
 
-        if (CheckInAttackRange() != null)
+        if (garden == null)
+            Debug.Log("All targets destroyed");
+
+        if (CheckInAttackRange() != null && !isAttacking)
+        {
             Attack();
-            isMoving = false;
+        }
     }
 
     void MoveTowardsTarget()
@@ -127,17 +139,22 @@ public class BaseEnemyScript : MonoBehaviour
     void Attack()
     {
         isMoving = false;
+        isAttacking = true;
         Collider2D target = CheckInAttackRange();
-        //take the class from target and use the takedamage method
+        var damageable = target.GetComponent<GardenArea>();
+        if (damageable != null)
+            damageable.TakeDamage(damagePoints);
+
+        Invoke("ResetAttack", attackSpeed);
     }
 
     private Collider2D CheckInAttackRange()
     {
         var hits = Physics2D.OverlapCircle(transform.position, attackRange, attackTarget);
-        if (hits != null)
+        if (hits != null && hits.CompareTag(targetTag))
             return hits;
-        else
-            return null;
+        
+        return null;
     }
 
     public void PushEnemies()
@@ -152,8 +169,13 @@ public class BaseEnemyScript : MonoBehaviour
             Die();
     }
 
+    void ResetAttack()
+    {
+        isAttacking = false;
+    }
+
     void Die()
     {
-        //I die
+        Destroy(gameObject);
     }
 }
