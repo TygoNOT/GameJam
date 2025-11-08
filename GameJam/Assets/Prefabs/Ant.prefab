@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65429424a0e519b468e741431a541c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedPoints: 5
+  speedPoints: 8
   damagePoints: 1
-  maxHealthPoints: 5
-  attackRange: 1
+  maxHealthPoints: 10
+  attackRange: 2
   attackSpeed: 1
   test: {fileID: 0}
   garden: {fileID: 0}
@@ -140,7 +140,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: -0.010876179, y: -0.059352696}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -151,5 +151,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.71239567, y: 0.56496894}
   m_EdgeRadius: 0
