@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyWaveManager : MonoBehaviour
 {
     [SerializeField] private int minimumEnemiesInGame = 100; //This is the minumum enemies should be in game. If the number of enemies alive equals or exceeds this number, no enemies will be spawning
-    [SerializeField] private float timeBetweenWaves = 60; //Time pause between enemy wave spawn
+    [SerializeField] private float timeBetweenWaves = 20; //Time pause between enemy wave spawn
     [SerializeField] private int waveLevel = 1; //This is enemy on spawn number amplifier. numbers of enemies that spawn will equal to waveLevel * 10
     [SerializeField] private int waveLevelIncrease = 2; //number of waves that needs to be spawned before wave level increases
     [SerializeField] private List<EnemyStruct> enemiesList;
@@ -21,7 +21,7 @@ public class EnemyWaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpawnEnemyWave();
     }
 
     // Update is called once per frame
@@ -29,9 +29,11 @@ public class EnemyWaveManager : MonoBehaviour
     {
         timer += Time.deltaTime;
         if (isSpawnerActive && timer >= timeBetweenWaves)
-            SpawnEnemyWave();
-        else
+        {
             timer = 0;
+            SpawnEnemyWave();
+        }
+        
     }
 
     void SpawnEnemyWave()
@@ -50,7 +52,7 @@ public class EnemyWaveManager : MonoBehaviour
         //Choose location and spawn enemies there
         //Possibly there will be 5 possible spawn locations, and on each spawn enemies will be spawning in the farthest point from player
 
-        int enemiesToSpawn = waveLevel * 10;
+        int enemiesToSpawn = waveLevel * 12;
         int spawnPoint = GetSpawnPoint();
 
         for (int i = 0; i < enemiesToSpawn; i++)
@@ -59,7 +61,7 @@ public class EnemyWaveManager : MonoBehaviour
             Instantiate(enemy.enemyPrefab, GetSpawnPos(spawnPoint), Quaternion.identity);
         }
 
-        Debug.Log("Spawning enemy wave");
+        Debug.Log(aliveEnemies);
 
         if (totalWaveNumber % 10 == 0)
             SpawnBoss();
@@ -118,7 +120,7 @@ public class EnemyWaveManager : MonoBehaviour
     private Vector2 GetSpawnPos(int spawnPoint)
     {
         Vector3 spawnCenter = spawnAreasList[spawnPoint].transform.position;
-        float spawnRadius = 5f;
+        float spawnRadius = 10f;
 
         Vector2 randomOffset = Random.insideUnitCircle * spawnRadius;
 
@@ -130,4 +132,6 @@ public class EnemyWaveManager : MonoBehaviour
 
         return spawnPos;
     }
+
+    
 }
