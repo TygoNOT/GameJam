@@ -8,11 +8,15 @@ public class BaseEnemyScript : MonoBehaviour
 
     [SerializeField] private float speedPoints;
     [SerializeField] private int damagePoints;
+    [SerializeField] private int moneyDropped;
+    [SerializeField] private int expDropped;
     [SerializeField] private float maxHealthPoints;
     private float currentHealthPoints;
     [SerializeField] private float attackRange;
     [SerializeField] private float attackSpeed;
+    [SerializeField] private GameManager111 gameManager;
     [SerializeField] private GameObject test;
+    [SerializeField] private CharacterStats characterStats;
     [SerializeField] private Animator _animator;
     private bool isFenceAlive = false;
     private bool isGardenAlive;
@@ -43,7 +47,8 @@ public class BaseEnemyScript : MonoBehaviour
     {
         myPosition = gameObject.transform.position;
         Debug.Log(myPosition);
-
+        gameManager = GameObject.Find("GameManager111").GetComponent<GameManager111>();
+        characterStats = GameObject.FindWithTag("Player").GetComponent<CharacterStats>();
         garden = GameObject.FindGameObjectWithTag(targetTagGarden);
         fence = GameObject.FindGameObjectWithTag(targetTagFence);
         Debug.Log(garden);
@@ -195,5 +200,16 @@ public class BaseEnemyScript : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+        GiveMoneyOnDeath(moneyDropped);
+        GiveExpOnDeath(expDropped);
+    }
+
+    void GiveMoneyOnDeath(int moneyDropped)
+    {
+        gameManager.GetAddMoney(moneyDropped);
+    }
+    void GiveExpOnDeath(int expDropped)
+    {
+        characterStats.GainXP(expDropped);
     }
 }
