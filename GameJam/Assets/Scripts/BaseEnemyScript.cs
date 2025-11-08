@@ -13,6 +13,7 @@ public class BaseEnemyScript : MonoBehaviour
     [SerializeField] private float attackRange;
     [SerializeField] private float attackSpeed;
     [SerializeField] private GameObject test;
+    [SerializeField] private Animator _animator;
     private bool isFenceAlive = false;
     private bool isGardenAlive;
     private bool isMoving = true;
@@ -98,7 +99,11 @@ public class BaseEnemyScript : MonoBehaviour
             return;
 
         if (isMoving)
+        {
             MoveTowardsTarget();
+            _animator.SetBool("isMoving", true);
+        }
+        else _animator.SetBool("isMoving", false);
     }
 
     private void FixedUpdate()
