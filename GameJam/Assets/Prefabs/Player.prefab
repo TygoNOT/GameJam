@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6264454968550639640}
   - component: {fileID: 270735904911389080}
   - component: {fileID: 2948901215122858890}
+  - component: {fileID: 631236105196431670}
+  - component: {fileID: 1619787571801694706}
   - component: {fileID: 8113124597413119853}
   m_Layer: 0
   m_Name: Player
@@ -188,6 +190,33 @@ MonoBehaviour:
   stats: {fileID: 5753179290333585768}
   rb: {fileID: 6264454968550639640}
   animator: {fileID: 8113124597413119853}
+  lastMoveDir: {x: 0, y: -1}
+--- !u!114 &631236105196431670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058802017529973609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ca54a04052da34cb34a91fb000b303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iceFirePrefab: {fileID: 8246153186254289725, guid: ab375706c6861b44fa4a620cb29aa310, type: 3}
+--- !u!114 &1619787571801694706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058802017529973609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee9bcb2ac25474469562ab694a776de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iceFirePrefab: {fileID: 1297244774883501816, guid: bee2f92be16bde944813bebcff167653, type: 3}
 --- !u!95 &8113124597413119853
 Animator:
   serializedVersion: 5
