@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2337568965945561207}
   - component: {fileID: 2570129822941318251}
+  - component: {fileID: 5753179290333585768}
   - component: {fileID: 6264454968550639640}
   - component: {fileID: 270735904911389080}
   - component: {fileID: 2948901215122858890}
@@ -90,6 +91,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5753179290333585768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058802017529973609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 416c5e20461ca6746a786646eb1139b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovementSpeed: 5
+  playerAttackSpeed: 1
+  playerBaseAttackDmg: 10
+  playerLevel: 1
+  currentXP: 0
+  requiredXP: 100
+  xpIncreasePerLevel: 50
+  xpSlider: {fileID: 0}
+  xpText: {fileID: 0}
+  levelUpPanel: {fileID: 0}
 --- !u!50 &6264454968550639640
 Rigidbody2D:
   serializedVersion: 4
@@ -164,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaf4cd9bc7ae774e84487f0f418d6e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  stats: {fileID: 5753179290333585768}
   rb: {fileID: 6264454968550639640}
   animator: {fileID: 8113124597413119853}
   lastMoveDir: {x: 0, y: -1}
