@@ -12,18 +12,21 @@ public class BaseEnemyScript : MonoBehaviour
     private float currentHealthPoints;
     [SerializeField] private float attackRange;
     [SerializeField] private float attackSpeed;
+    [SerializeField] private GameObject test;
     private bool isFenceAlive = false;
     private bool isGardenAlive;
     private bool isMoving = true;
     private bool isAttacking = false;
+    private bool targetChanged = false;
 
     private Vector2 myPosition;
     private Vector2 targetPosition;
 
-    private GameObject? fence = null;
+    private GameObject fence;
     public GameObject garden;
     [SerializeField] private LayerMask attackTarget;
-    private string targetTag = "GardenArea";
+    private string targetTagFence = "DefenseArea";
+    private string targetTagGarden = "GardenArea";
 
     private void OnEnable()
     {
@@ -40,14 +43,17 @@ public class BaseEnemyScript : MonoBehaviour
         myPosition = gameObject.transform.position;
         Debug.Log(myPosition);
 
-        garden = GameObject.FindGameObjectWithTag(targetTag);
+        garden = GameObject.FindGameObjectWithTag(targetTagGarden);
+        fence = GameObject.FindGameObjectWithTag(targetTagFence);
+        Debug.Log(garden);
+        Debug.Log(fence);
 
         if (fence != null)
         {
             //make a list with Fence child game objects
             //find the one which child game object is closest to you
             //set that child object as a target
-            isFenceAlive = false;
+            isFenceAlive = true;
             Vector2 closestTarget =  Vector2.zero;
             float smallestDistanceDifference = Mathf.Infinity;
 
@@ -66,7 +72,7 @@ public class BaseEnemyScript : MonoBehaviour
         }
         else
         {
-            isFenceAlive = true;
+            isFenceAlive = false;
             Vector2 closestTarget = Vector2.zero;
             float smallestDistanceDifference = Mathf.Infinity;
 
@@ -97,7 +103,7 @@ public class BaseEnemyScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (fence == null && garden != null)
+        if (fence == null && garden != null && !targetChanged)
             ChangeTarget();
 
         if (garden == null)
@@ -111,14 +117,17 @@ public class BaseEnemyScript : MonoBehaviour
 
     void MoveTowardsTarget()
     {
+        myPosition = gameObject.transform.position;
         float step = speedPoints * Time.deltaTime;
         transform.position = Vector2.MoveTowards(myPosition, targetPosition, step);
     }
 
     void ChangeTarget()
     {
+        targetChanged = true;
         myPosition = gameObject.transform.position;
         isFenceAlive = true;
+        isMoving = true;
 
         Vector2 closestTarget = Vector2.zero;
         float smallestDistanceDifference = Mathf.Infinity;
@@ -138,12 +147,16 @@ public class BaseEnemyScript : MonoBehaviour
 
     void Attack()
     {
+        Debug.Log("I am starting to attack");
         isMoving = false;
         isAttacking = true;
         Collider2D target = CheckInAttackRange();
-        var damageable = target.GetComponent<GardenArea>();
+        var damageable = target.GetComponent<DefenseArea>();
         if (damageable != null)
+        {
+            Debug.Log("I am attacking");
             damageable.TakeDamage(damagePoints);
+        }
 
         Invoke("ResetAttack", attackSpeed);
     }
@@ -151,9 +164,12 @@ public class BaseEnemyScript : MonoBehaviour
     private Collider2D CheckInAttackRange()
     {
         var hits = Physics2D.OverlapCircle(transform.position, attackRange, attackTarget);
-        if (hits != null && hits.CompareTag(targetTag))
+        if (hits != null && (hits.CompareTag(targetTagFence) || hits.CompareTag(targetTagGarden)))
+        {
+            Debug.Log("Returning not null");
             return hits;
-        
+        }
+            
         return null;
     }
 

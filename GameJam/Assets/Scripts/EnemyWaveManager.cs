@@ -101,7 +101,8 @@ public class EnemyWaveManager : MonoBehaviour
     private int GetSpawnPoint()
     {
         //get player position
-        Vector2 playerPos = Vector2.zero; //placeholder
+        var player = GameObject.FindGameObjectWithTag("Player");
+        Vector2 playerPos = player.transform.position; //placeholder
         int chosenPoint = 0;
         float farthestPoint = Vector2.Distance(playerPos, spawnAreasList[chosenPoint].transform.position);
         for (int i = 0; i < spawnAreasList.Count; i++)
