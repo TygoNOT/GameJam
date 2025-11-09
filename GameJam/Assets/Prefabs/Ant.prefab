@@ -103,8 +103,8 @@ MonoBehaviour:
   speedPoints: 8
   speedAmp: 1
   damagePoints: 1
-  moneyDropped: 11
-  expDropped: 120
+  moneyDropped: 0
+  expDropped: 0
   maxHealthPoints: 10
   attackRange: 2
   attackSpeed: 1
