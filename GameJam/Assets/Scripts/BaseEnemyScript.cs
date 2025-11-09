@@ -107,7 +107,7 @@ public class BaseEnemyScript : MonoBehaviour
         if (isMoving)
         {
             MoveTowardsTarget();
-            _animator.SetBool("isMoving", true);
+            _animator.SetBool("isMoving", true);    
         }
         else _animator.SetBool("isMoving", false);
     }
