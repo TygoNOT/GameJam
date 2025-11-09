@@ -101,11 +101,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedPoints: 8
+  speedAmp: 1
   damagePoints: 1
+  moneyDropped: 0
+  expDropped: 0
   maxHealthPoints: 10
   attackRange: 2
   attackSpeed: 1
+  gameManager: {fileID: 0}
   test: {fileID: 0}
+  characterStats: {fileID: 0}
   _animator: {fileID: 977935061788695304}
   garden: {fileID: 0}
   attackTarget:

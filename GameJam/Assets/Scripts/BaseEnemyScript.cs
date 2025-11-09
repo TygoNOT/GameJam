@@ -55,8 +55,6 @@ public class BaseEnemyScript : MonoBehaviour
         Debug.Log(garden);
         Debug.Log(fence);
 
-        currentHealthPoints = maxHealthPoints;
-
         if (fence != null)
         {
             //make a list with Fence child game objects
