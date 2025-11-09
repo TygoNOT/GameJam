@@ -45,7 +45,7 @@ public class CharacterStats : MonoBehaviour
     private void LevelUp()
     {
         playerLevel++;
-        requiredXP = Mathf.RoundToInt(requiredXP * 2f);
+        requiredXP = Mathf.RoundToInt(requiredXP * 1.5f);
         Time.timeScale = 0f;
         levelUpPanel.SetActive(true);
         UpdateLevelUI();
@@ -73,14 +73,14 @@ public class CharacterStats : MonoBehaviour
 
     public void IncreaseAttackSpeed()
     {
-        playerAttackSpeed += 0.1f;
+        playerAttackSpeed += 0.2f;
         CloseLevelUpPanel();
         Time.timeScale = 1f;
     }
 
     public void IncreaseAttackPower()
     {
-        playerBaseAttackDmg += 0.1f;
+        playerBaseAttackDmg += 0.2f;
         CloseLevelUpPanel();
         Time.timeScale = 1f;
     }

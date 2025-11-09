@@ -100,12 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65429424a0e519b468e741431a541c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedPoints: 7
+  speedPoints: 3
   speedAmp: 1
-  damagePoints: 15
-  moneyDropped: 11
-  expDropped: 1111
-  maxHealthPoints: 100
+  damagePoints: 27
+  moneyDropped: 400
+  expDropped: 900
+  maxHealthPoints: 1200
   attackRange: 2
   attackSpeed: 1
   gameManager: {fileID: 0}
