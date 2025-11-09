@@ -19,10 +19,9 @@ public class GameManager111 : MonoBehaviour
     [SerializeField]
     private int playerGold;
 
-
     [Header("Gameobjects")]
     private Text playerGold_Text;
-    public Text timerText;
+    private Text timerText;
 
     [Header("Input Binds")]
     private string addMoneyKey = "AddMoney";
@@ -32,19 +31,12 @@ public class GameManager111 : MonoBehaviour
     [SerializeField] private int gardenHP;
     public List<FlowerItem> availableFlowers;
 
-    [Header("Timer Settings")]
-    public bool timerIsRunning = false;
-    public float currentTime = 0f; 
-
-    [Header("Colors")]
-    public Color runningColor = Color.green;
-    public Color completedColor = Color.red;
-
-    private Coroutine timerCoroutine;
+    [Header("Variables")]
+    private float time = 0f;
 
     void Start()
     {
-
+        timerText = GameObject.Find("Timer")?.GetComponent<Text>();
         if (playerGold_Text == null)
         {
             playerGold_Text = GameObject.Find("MoneyAmount")?.GetComponent<Text>();
@@ -57,67 +49,14 @@ public class GameManager111 : MonoBehaviour
     }   
     void Update()
     {
+        time += Time.deltaTime;
+        int hours = (int)(time / 3600);
+        int minutes = (int)((time % 3600) / 60);
+        int seconds = (int)(time % 60);
+        timerText.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
+
         playerGold_Text.text = playerGold.ToString() ;
 
-    }
-    public void RestartTimer()
-    {
-        ResetTimer();
-        StartTimer();
-    }
-    public void ResetTimer()
-    {
-        currentTime = 0f;
-        UpdateTimerDisplay();
-    }
-    private void UpdateTimerDisplay()
-    {
-        if (timerText != null)
-        {
-            timerText.text = FormatTime(currentTime);
-        }
-    }
-    private string FormatTime(float timeInSeconds)
-    {
-        int hours = Mathf.FloorToInt(timeInSeconds / 3600f);
-        int minutes = Mathf.FloorToInt((timeInSeconds % 3600f) / 60f);
-        int seconds = Mathf.FloorToInt(timeInSeconds % 60f);
-        int milliseconds = Mathf.FloorToInt((timeInSeconds * 1000) % 1000);
-
-        if (hours > 0)
-            return string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
-        else
-            return string.Format("{0:00}:{1:00}.{2:000}", minutes, seconds, milliseconds);
-    }
-    private void UpdateTimerColor(Color color)
-    {
-        if (timerText != null)
-        {
-            timerText.color = color;
-        }
-    }
-    public float GetCurrentTime()
-    {
-        return currentTime;
-    }
-    private IEnumerator TimerRoutine()
-    {
-        UpdateTimerColor(runningColor);
-
-        while (timerIsRunning)
-        {
-            currentTime += Time.deltaTime;
-            UpdateTimerDisplay();
-            yield return null;
-        }
-    }
-    public void StartTimer()
-    {
-        if (timerCoroutine != null)
-            StopCoroutine(timerCoroutine);
-
-        timerIsRunning = true;
-        timerCoroutine = StartCoroutine(TimerRoutine());
     }
     public void GetAddMoney(int amount)
     {

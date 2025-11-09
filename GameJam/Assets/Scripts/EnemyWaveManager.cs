@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyWaveManager : MonoBehaviour
 {
@@ -18,10 +18,12 @@ public class EnemyWaveManager : MonoBehaviour
 
     public static int aliveEnemies = 0;
 
+    [SerializeField] private Text waveText;
     // Start is called before the first frame update
     void Start()
     {
         SpawnEnemyWave();
+        waveText=GameObject.Find("WaveCount")?.GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -49,6 +51,7 @@ public class EnemyWaveManager : MonoBehaviour
         }
 
         totalWaveNumber += 1;
+        if(waveText != null) waveText.text = totalWaveNumber.ToString();
         //Choose location and spawn enemies there
         //Possibly there will be 5 possible spawn locations, and on each spawn enemies will be spawning in the farthest point from player
 
