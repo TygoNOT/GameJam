@@ -7,7 +7,7 @@ public class CharacterStats : MonoBehaviour
     [Header("PlayerStats")]
     public int playerMovementSpeed = 5;
     public float playerAttackSpeed = 1f;
-    public int playerBaseAttackDmg = 10;
+    public float playerBaseAttackDmg = 1f;
     public int playerLevel = 1;
     
     [Header("XP System")]
@@ -76,13 +76,13 @@ public class CharacterStats : MonoBehaviour
 
     public void IncreaseAttackSpeed()
     {
-        playerAttackSpeed += 0.2f;
+        playerAttackSpeed += 0.1f;
         CloseLevelUpPanel();
     }
 
     public void IncreaseAttackPower()
     {
-        playerBaseAttackDmg += 5;
+        playerBaseAttackDmg += 0.1f;
         CloseLevelUpPanel();
     }
 

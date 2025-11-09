@@ -12,8 +12,13 @@ public class DonutAttack : MonoBehaviour
     [SerializeField] private ParticleSystem damageEffect;
 
     private float timer;
-    void Start()
+    private GameObject player;
+    private CharacterStats characterStats;
+
+    private void Start()
     {
+        player = GameObject.FindWithTag("Player");
+        characterStats = player.GetComponent<CharacterStats>();
         timer = 0;
     }
 
@@ -37,7 +42,7 @@ public class DonutAttack : MonoBehaviour
             foreach (Collider2D hit in hits)
             {
                 int damage = UnityEngine.Random.Range(minDamage, maxDamge + 1);
-                hit.GetComponent<BaseEnemyScript>().TakeDamage(damage);
+                hit.GetComponent<BaseEnemyScript>().TakeDamage(damage * characterStats.playerBaseAttackDmg);
             }
         }
     }

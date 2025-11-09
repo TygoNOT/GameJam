@@ -7,6 +7,7 @@ public class BaseEnemyScript : MonoBehaviour
 {
 
     [SerializeField] private float speedPoints;
+    [SerializeField] public float speedAmp = 1;
     [SerializeField] private int damagePoints;
     [SerializeField] private float maxHealthPoints;
     private float currentHealthPoints;
@@ -123,7 +124,7 @@ public class BaseEnemyScript : MonoBehaviour
     void MoveTowardsTarget()
     {
         myPosition = gameObject.transform.position;
-        float step = speedPoints * Time.deltaTime;
+        float step = speedPoints * Time.deltaTime * speedAmp;
         transform.position = Vector2.MoveTowards(myPosition, targetPosition, step);
     }
 
