@@ -88,7 +88,7 @@ public class MenuManager : MonoBehaviour
 
     public void OnPlayClicked()
     {
-        // SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Infinite Level");
     }
 
     public void OnExitClicked()
