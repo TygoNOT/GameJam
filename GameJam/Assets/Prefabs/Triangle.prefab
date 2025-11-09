@@ -101,10 +101,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedPoints: 5
   damagePoints: 1
+  moneyDropped: 10
+  expDropped: 5
   maxHealthPoints: 5
   attackRange: 1
   attackSpeed: 1
+  gameManager: {fileID: 0}
   test: {fileID: 0}
+  characterStats: {fileID: 0}
+  _animator: {fileID: 0}
   garden: {fileID: 0}
   attackTarget:
     serializedVersion: 2
