@@ -8,6 +8,7 @@ public class SlowingWeapon : MonoBehaviour
     [SerializeField, Range(0, 100)] private int slowPercentage = 30;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private float cooldown = 8f;
+    [SerializeField] private ParticleSystem damageEffect;
 
     private float timer;
     private Collider2D[] enemiesHit;
@@ -29,6 +30,8 @@ public class SlowingWeapon : MonoBehaviour
     void DoAttack()
     {
         timer = 0;
+
+        damageEffect.Play();
         enemiesHit = Physics2D.OverlapCircleAll(this.transform.position, radius, enemyMask);
         if (enemiesHit.Length > 0)
             foreach (Collider2D hit in enemiesHit)
