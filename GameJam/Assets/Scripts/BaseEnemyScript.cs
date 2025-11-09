@@ -34,6 +34,8 @@ public class BaseEnemyScript : MonoBehaviour
     private string targetTagFence = "DefenseArea";
     private string targetTagGarden = "GardenArea";
 
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField] private AudioSource hitSource;
     private void OnEnable()
     {
         EnemyWaveManager.aliveEnemies++;
@@ -46,6 +48,7 @@ public class BaseEnemyScript : MonoBehaviour
 
     void Start()
     {
+        hitSource = GameObject.Find("HitSound").GetComponent<AudioSource>();
         myPosition = gameObject.transform.position;
         Debug.Log(myPosition);
         gameManager = GameObject.Find("GameManager111").GetComponent<GameManager111>();
@@ -63,7 +66,7 @@ public class BaseEnemyScript : MonoBehaviour
             //find the one which child game object is closest to you
             //set that child object as a target
             isFenceAlive = true;
-            Vector2 closestTarget =  Vector2.zero;
+            Vector2 closestTarget = Vector2.zero;
             float smallestDistanceDifference = Mathf.Infinity;
 
             foreach (Transform child in fence.transform)
@@ -103,13 +106,13 @@ public class BaseEnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isFenceAlive &&  !isGardenAlive)
+        if (!isFenceAlive && !isGardenAlive)
             return;
 
         if (isMoving)
         {
             MoveTowardsTarget();
-            _animator.SetBool("isMoving", true);    
+            _animator.SetBool("isMoving", true);
         }
         else _animator.SetBool("isMoving", false);
     }
@@ -170,6 +173,7 @@ public class BaseEnemyScript : MonoBehaviour
         }
 
         Invoke("ResetAttack", attackSpeed);
+        hitSource.PlayOneShot(hitSound);
     }
 
     private Collider2D CheckInAttackRange()
@@ -179,7 +183,7 @@ public class BaseEnemyScript : MonoBehaviour
         {
             return hits;
         }
-            
+
         return null;
     }
 

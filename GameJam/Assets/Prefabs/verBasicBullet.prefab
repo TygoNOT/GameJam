@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDamage: 1
   maxDamage: 1
+
   projectileSpeed: 10
   timeToLive: 3
 --- !u!61 &4510619768911258661
