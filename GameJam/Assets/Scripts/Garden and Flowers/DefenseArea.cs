@@ -13,7 +13,9 @@ public class DefenseArea : MonoBehaviour
 
     protected virtual void Start()
     {
+
         currentHealth = maxHealth;
+
         if (healthBar != null)
             healthBar.SetMaxHealth(maxHealth);
     }
