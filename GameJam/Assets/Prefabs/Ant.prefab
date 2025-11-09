@@ -116,6 +116,8 @@ MonoBehaviour:
   attackTarget:
     serializedVersion: 2
     m_Bits: 8
+  hitSound: {fileID: 8300000, guid: 8b586751454033948a823edd4c934f78, type: 3}
+  hitSource: {fileID: 0}
 --- !u!61 &4082359082344640712
 BoxCollider2D:
   m_ObjectHideFlags: 0

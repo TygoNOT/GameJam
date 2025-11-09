@@ -101,16 +101,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedPoints: 5
+  speedAmp: 1
   damagePoints: 1
+  moneyDropped: 0
+  expDropped: 0
   maxHealthPoints: 5
   attackRange: 1
   attackSpeed: 1
+  gameManager: {fileID: 0}
   test: {fileID: 0}
+  characterStats: {fileID: 0}
   _animator: {fileID: 6991776173365468940}
   garden: {fileID: 0}
   attackTarget:
     serializedVersion: 2
     m_Bits: 8
+  hitSound: {fileID: 8300000, guid: 8b586751454033948a823edd4c934f78, type: 3}
+  hitSource: {fileID: 0}
 --- !u!61 &4082359082344640712
 BoxCollider2D:
   m_ObjectHideFlags: 0

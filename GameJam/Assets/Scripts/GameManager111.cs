@@ -22,6 +22,9 @@ public class GameManager111 : MonoBehaviour
     [Header("Gameobjects")]
     private Text playerGold_Text;
     public Text timerText;
+    [SerializeField] private AudioClip buySound;
+    [SerializeField] private AudioSource audioSource;
+
 
     [Header("Input Binds")]
     private string addMoneyKey = "AddMoney";
@@ -98,10 +101,11 @@ public class GameManager111 : MonoBehaviour
         {
             return;
         }
-
+        audioSource.PlayOneShot(buySound);
         playerGold -= item.price;
         UpdateMoneyUI();
         GardenManager.Instance.PlantFlowerInFirstFreeBed(item.flowerPrefab);
     }
+
 
 }
