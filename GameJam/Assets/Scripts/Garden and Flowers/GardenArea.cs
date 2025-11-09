@@ -7,12 +7,16 @@ public class GardenArea : DefenseArea
     [Header("Beds inside the garden")]
     public GardenBed[] gardenBeds;
 
+    [SerializeField] private LoseManager loseManager;
+
     private void Start()
     {
         base.Start();
 
         if (gardenBeds == null || gardenBeds.Length == 0)
             gardenBeds = GetComponentsInChildren<GardenBed>();
+
+        loseManager = GameObject.Find("LoseManager")?.GetComponent<LoseManager>();
     }
 
     protected override void OnDestroyed()
@@ -24,6 +28,7 @@ public class GardenArea : DefenseArea
                 Destroy(bed.gameObject);
         }
 
-        base.OnDestroyed(); 
+        base.OnDestroyed();
+        loseManager.Lose();
     }
 }
