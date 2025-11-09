@@ -34,6 +34,8 @@ public class BaseEnemyScript : MonoBehaviour
     private string targetTagFence = "DefenseArea";
     private string targetTagGarden = "GardenArea";
 
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField] private AudioSource hitSource;
     private void OnEnable()
     {
         EnemyWaveManager.aliveEnemies++;
@@ -46,6 +48,7 @@ public class BaseEnemyScript : MonoBehaviour
 
     void Start()
     {
+        hitSource = GameObject.Find("HitSound").GetComponent<AudioSource>();
         myPosition = gameObject.transform.position;
         Debug.Log(myPosition);
         gameManager = GameObject.Find("GameManager111").GetComponent<GameManager111>();
@@ -168,6 +171,7 @@ public class BaseEnemyScript : MonoBehaviour
         }
 
         Invoke("ResetAttack", attackSpeed);
+        hitSource.PlayOneShot(hitSound);
     }
 
     private Collider2D CheckInAttackRange()
