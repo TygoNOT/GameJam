@@ -21,7 +21,7 @@ public class GameManager111 : MonoBehaviour
 
     [Header("Gameobjects")]
     private Text playerGold_Text;
-    private Text timerText;
+    public Text timerText;
 
     [Header("Input Binds")]
     private string addMoneyKey = "AddMoney";

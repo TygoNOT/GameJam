@@ -32712,6 +32712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGold: 0
+  timerText: {fileID: 0}
   gardenHP: 0
   availableFlowers:
   - FlowerID: 0
