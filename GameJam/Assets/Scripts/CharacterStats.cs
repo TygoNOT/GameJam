@@ -29,10 +29,6 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            GainXP(40);
-        }
     }
 
     public void GainXP(int amount)
@@ -50,6 +46,7 @@ public class CharacterStats : MonoBehaviour
     {
         playerLevel++;
         requiredXP = Mathf.RoundToInt(requiredXP * 2f);
+        Time.timeScale = 0f;
         levelUpPanel.SetActive(true);
         UpdateLevelUI();
     }
@@ -78,18 +75,21 @@ public class CharacterStats : MonoBehaviour
     {
         playerAttackSpeed += 0.1f;
         CloseLevelUpPanel();
+        Time.timeScale = 1f;
     }
 
     public void IncreaseAttackPower()
     {
         playerBaseAttackDmg += 0.1f;
         CloseLevelUpPanel();
+        Time.timeScale = 1f;
     }
 
     public void IncreaseMovementSpeed()
     {
         playerMovementSpeed += 1;
         CloseLevelUpPanel();
+        Time.timeScale = 1f;
     }
 
     private void CloseLevelUpPanel()

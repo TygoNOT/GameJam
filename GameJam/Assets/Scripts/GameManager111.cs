@@ -57,15 +57,6 @@ public class GameManager111 : MonoBehaviour
 
         playerGold_Text.text = playerGold.ToString() ;
 
-        if (Input.GetButtonDown(addMoneyKey))
-        {
-            AddMoney(100);
-        }
-
-        if (Input.GetButtonDown(spendMoneyKey))
-        {
-            SpentMoney(20);
-        }
     }
     public void GetAddMoney(int amount)
     {
@@ -76,15 +67,7 @@ public class GameManager111 : MonoBehaviour
         playerGold += amount;
         UpdateMoneyUI();
     }
-    private void SpentMoney(int amount)
-    {
-        if (playerGold >= amount)
-        {
-            playerGold -= amount;
-            UpdateMoneyUI();
-        }
-        else Debug.Log("You cant afford that !!!");
-    }
+    
     private void UpdateMoneyUI()
     {
         if (playerGold_Text != null)
@@ -96,7 +79,6 @@ public class GameManager111 : MonoBehaviour
     {
         if (flowerID < 0 || flowerID >= availableFlowers.Count)
         {
-            Debug.LogError("Неверный ID цветка!");
             return;
         }
 
@@ -107,12 +89,18 @@ public class GameManager111 : MonoBehaviour
             return;
         }
 
+        if (GardenManager.Instance.HasFlowerWithID(flowerID))
+        {
+            return;
+        }
+
         if (!GardenManager.Instance.HasFreeBed())
         {
             return;
         }
 
         playerGold -= item.price;
+        UpdateMoneyUI();
         GardenManager.Instance.PlantFlowerInFirstFreeBed(item.flowerPrefab);
     }
 
