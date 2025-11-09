@@ -16,6 +16,11 @@ GameObject:
   - component: {fileID: 2948901215122858890}
   - component: {fileID: 631236105196431670}
   - component: {fileID: 1619787571801694706}
+  - component: {fileID: 3389456205440271634}
+  - component: {fileID: 5664615046450756317}
+  - component: {fileID: 2902203769998539531}
+  - component: {fileID: 6931406498829226741}
+  - component: {fileID: 968044628204084203}
   - component: {fileID: 8113124597413119853}
   m_Layer: 0
   m_Name: Player
@@ -109,9 +114,9 @@ MonoBehaviour:
   playerLevel: 1
   currentXP: 0
   requiredXP: 100
-  xpIncreasePerLevel: 50
   xpSlider: {fileID: 0}
   xpText: {fileID: 0}
+  levelText: {fileID: 0}
   levelUpPanel: {fileID: 0}
 --- !u!50 &6264454968550639640
 Rigidbody2D:
@@ -217,6 +222,94 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iceFirePrefab: {fileID: 1297244774883501816, guid: bee2f92be16bde944813bebcff167653, type: 3}
+--- !u!114 &3389456205440271634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058802017529973609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f304cb5e8e3c7fe47a9ae6e8b782f04d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 5
+  slowPercentage: 30
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 64
+  cooldown: 8
+--- !u!114 &5664615046450756317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058802017529973609}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52966080629b87e48bd99510dc2032e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 10
+  healAmmount: 10
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 8
+  cooldown: 10
+--- !u!114 &2902203769998539531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058802017529973609}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d966957da23ab54ea9aaee831050897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5177456241220608697, guid: 82c98d0fdc15dd54a91a293dbdf84bd0, type: 3}
+  bulletCount: 90
+  spawnDelay: 0.03
+  cooldown: 15
+--- !u!114 &6931406498829226741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058802017529973609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384a02f9de90d44581dfaa0b987d317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicBullet: {fileID: 5473786202766341921, guid: 1712c00e52bdfbd49b5166e2c7846347, type: 3}
+  radius: 6
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 64
+  cooldown: 1
+--- !u!114 &968044628204084203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058802017529973609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384a02f9de90d44581dfaa0b987d317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicBullet: {fileID: 5480930465703613749, guid: 2f6906bb2611da4418340c314e85a9f1, type: 3}
+  radius: 6
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 64
+  cooldown: 3
 --- !u!95 &8113124597413119853
 Animator:
   serializedVersion: 5

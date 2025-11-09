@@ -8,14 +8,18 @@ public class BasicShootActive : MonoBehaviour
     [SerializeField] private GameObject iceFirePrefab;
     private float cooldown = 3;
     private float timer;
+    private GameObject player;
+    private CharacterStats characterStats;
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
+        characterStats = player.GetComponent<CharacterStats>();
         timer = 0;
     }
 
     private void Update()
     {
-        if (timer > cooldown)
+        if (timer > cooldown / characterStats.playerAttackSpeed)
         {
             timer = 0;
             ShootFireKiss();

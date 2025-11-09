@@ -48,8 +48,11 @@ public class DefenseArea : MonoBehaviour
     }
     public virtual void Heal(int amount)
     {
-        currentHealth += amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        if (currentHealth > 0)
+        {
+            currentHealth += amount;
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        }
 
         if (healthBar != null)
             healthBar.SetHealth(currentHealth);
