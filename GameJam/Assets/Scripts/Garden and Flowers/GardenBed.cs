@@ -8,19 +8,20 @@ public class GardenBed : MonoBehaviour
     public bool isOccupied = false;
     private GameObject currentFlower;
 
-    public void PlantFlower(GameObject flowerPrefab)
+    public GameObject PlantFlower(GameObject flowerPrefab)
     {
-        if (isOccupied) return;
+        if (isOccupied) return null;
         
         FlowerBase flowerBase = flowerPrefab.GetComponent<FlowerBase>();
-        float offsetY = 0.5f; 
-        if (flowerBase != null)
-            offsetY = flowerBase.flowerYOffset;
+        float offsetY = flowerBase != null ? flowerBase.flowerYOffset : 0.5f;
 
         Vector3 spawnPosition = transform.position + new Vector3(0, offsetY, 0);
 
         currentFlower = Instantiate(flowerPrefab, spawnPosition, Quaternion.identity);
         isOccupied = true;
+
+        return currentFlower;
+
     }
 
     public void RemoveFlower()
@@ -31,5 +32,13 @@ public class GardenBed : MonoBehaviour
             currentFlower = null;
             isOccupied = false;
         }
+    }
+
+    public bool HasFlowerID(int flowerID)
+    {
+        if (currentFlower == null) return false;
+
+        FlowerBase flowerBase = currentFlower.GetComponent<FlowerBase>();
+        return (flowerBase != null && flowerBase.flowerID == flowerID);
     }
 }

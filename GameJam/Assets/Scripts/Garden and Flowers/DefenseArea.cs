@@ -38,14 +38,6 @@ public class DefenseArea : MonoBehaviour
         Destroy(gameObject);
     }
 
-    protected virtual void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-            TakeDamage(10);
-
-        if (Input.GetKeyDown(KeyCode.H))
-            Heal(10);
-    }
     public virtual void Heal(int amount)
     {
         if (currentHealth > 0)

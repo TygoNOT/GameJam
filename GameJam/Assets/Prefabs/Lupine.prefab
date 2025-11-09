@@ -97,5 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777b091001df6b44c93d981859c63ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flowerID: 5
   flowerName: Lupine
   flowerYOffset: 0.3

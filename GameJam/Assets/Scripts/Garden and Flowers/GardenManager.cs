@@ -25,9 +25,26 @@ public class GardenManager : MonoBehaviour
         {
             if (!bed.isOccupied)
             {
-                bed.PlantFlower(flowerPrefab);
+                GameObject plantedFlower = bed.PlantFlower(flowerPrefab);
+
+                FlowerBase flowerBase = plantedFlower.GetComponent<FlowerBase>();
+                if (flowerBase != null)
+                {
+                    PlayerAttackManager.Instance.ActivateAttack(flowerBase.flowerID);
+                }
+
                 return true;
             }
+        }
+        return false;
+    }
+
+    public bool HasFlowerWithID(int flowerID)
+    {
+        foreach (var bed in gardenBeds)
+        {
+            if (bed.isOccupied && bed.HasFlowerID(flowerID))
+                return true;
         }
         return false;
     }
