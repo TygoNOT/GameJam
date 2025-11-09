@@ -55,13 +55,15 @@ public class BaseEnemyScript : MonoBehaviour
         Debug.Log(garden);
         Debug.Log(fence);
 
+        currentHealthPoints = maxHealthPoints;
+
         if (fence != null)
         {
             //make a list with Fence child game objects
             //find the one which child game object is closest to you
             //set that child object as a target
             isFenceAlive = true;
-            Vector2 closestTarget =  Vector2.zero;
+            Vector2 closestTarget = Vector2.zero;
             float smallestDistanceDifference = Mathf.Infinity;
 
             foreach (Transform child in fence.transform)
@@ -101,13 +103,13 @@ public class BaseEnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isFenceAlive &&  !isGardenAlive)
+        if (!isFenceAlive && !isGardenAlive)
             return;
 
         if (isMoving)
         {
             MoveTowardsTarget();
-            _animator.SetBool("isMoving", true);    
+            _animator.SetBool("isMoving", true);
         }
         else _animator.SetBool("isMoving", false);
     }
@@ -177,7 +179,7 @@ public class BaseEnemyScript : MonoBehaviour
         {
             return hits;
         }
-            
+
         return null;
     }
 
