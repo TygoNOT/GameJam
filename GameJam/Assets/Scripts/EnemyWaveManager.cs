@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,8 +53,6 @@ public class EnemyWaveManager : MonoBehaviour
 
         totalWaveNumber += 1;
         if(waveText != null) waveText.text = totalWaveNumber.ToString();
-        //Choose location and spawn enemies there
-        //Possibly there will be 5 possible spawn locations, and on each spawn enemies will be spawning in the farthest point from player
 
         int enemiesToSpawn = waveLevel * 12;
         int spawnPoint = GetSpawnPoint();
@@ -77,28 +76,25 @@ public class EnemyWaveManager : MonoBehaviour
 
     private EnemyStruct GetEnemy()
     {
-        // Sum up total weight
-        int totalWeight = 0;
-        foreach (var enemy in enemiesList)
-        {
-            // Weight increases with wave level and enemy difficulty
-            totalWeight += enemy.spawnWeight + (waveLevel * enemy.difficulty);
-        }
+        var availableEnemies = enemiesList.Where(e => e.difficulty <= waveLevel).ToList();
 
-        // Pick a random value within the total weight
+        if (availableEnemies.Count == 0)
+            availableEnemies.Add(enemiesList[0]); // fallback
+
+        int totalWeight = availableEnemies.Sum(e => e.spawnWeight);
         int randomValue = Random.Range(0, totalWeight);
         int current = 0;
 
-        foreach (var enemy in enemiesList)
+        foreach (var enemy in availableEnemies)
         {
-            current += enemy.spawnWeight + (waveLevel * enemy.difficulty);
+            current += enemy.spawnWeight;
             if (randomValue < current)
             {
                 return enemy;
             }
         }
 
-        return enemiesList[0]; // fallback
+        return availableEnemies[0];
     }
 
     private int GetSpawnPoint()

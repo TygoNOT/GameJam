@@ -55,6 +55,8 @@ public class BaseEnemyScript : MonoBehaviour
         Debug.Log(garden);
         Debug.Log(fence);
 
+        currentHealthPoints = maxHealthPoints;
+
         if (fence != null)
         {
             //make a list with Fence child game objects
@@ -188,7 +190,7 @@ public class BaseEnemyScript : MonoBehaviour
 
     public void TakeDamage(float weaponDamage)
     {
-        currentHealthPoints -= Mathf.Clamp(currentHealthPoints - weaponDamage, 0, maxHealthPoints);
+        currentHealthPoints = Mathf.Clamp(currentHealthPoints - weaponDamage, 0, maxHealthPoints);
         if (currentHealthPoints <= 0)
             Die();
     }

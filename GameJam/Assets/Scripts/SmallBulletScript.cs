@@ -36,9 +36,10 @@ public class SmallBulletScript : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             int damage = UnityEngine.Random.Range(minDamage, maxDamage + 1);
+            Debug.Log(damage);
             BaseEnemyScript enemy = collision.GetComponent<BaseEnemyScript>();
             enemy.TakeDamage(damage * characterStats.playerBaseAttackDmg);
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
