@@ -86793,17 +86793,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc5ac5ec578d9a419f815b230c089ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1433206015 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8470543505076937131, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
-  m_PrefabInstance: {fileID: 7421251619857264329}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d384a02f9de90d44581dfaa0b987d317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1433206026 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5753179290333585768, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
@@ -142422,10 +142411,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1619787571801694706, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2337568965945561207, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.1301516
@@ -142466,30 +142451,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2902203769998539531, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2948901215122858890, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3389456205440271634, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664615046450756317, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
-      propertyPath: cooldown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664615046450756317, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5664615046450756317, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
-      propertyPath: healAmmount
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 5753179290333585768, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
       propertyPath: xpText
       value: 
@@ -142506,10 +142467,6 @@ PrefabInstance:
       propertyPath: levelUpPanel
       value: 
       objectReference: {fileID: 1237401233}
-    - target: {fileID: 5753179290333585768, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
-      propertyPath: playerBaseAttackDmg
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5763390311802826239, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
       propertyPath: attacks.Array.data[3].attackObject
       value: 
@@ -142517,7 +142474,7 @@ PrefabInstance:
     - target: {fileID: 5763390311802826239, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
       propertyPath: attacks.Array.data[5].attackScript
       value: 
-      objectReference: {fileID: 1433206015}
+      objectReference: {fileID: 0}
     - target: {fileID: 5763390311802826239, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
       propertyPath: attacks.Array.data[7].attackScript
       value: 
@@ -142530,8 +142487,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 968044628204084203, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
+    - target: {fileID: 9198911043412525003, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

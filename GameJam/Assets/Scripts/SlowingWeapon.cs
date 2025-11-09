@@ -8,6 +8,7 @@ public class SlowingWeapon : MonoBehaviour
     [SerializeField, Range(0, 100)] private int slowPercentage = 30;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private float cooldown = 8f;
+    [SerializeField] private ParticleSystem particleSystems;
 
     private float timer;
     private Collider2D[] enemiesHit;
