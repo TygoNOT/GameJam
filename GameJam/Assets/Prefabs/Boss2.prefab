@@ -102,10 +102,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedPoints: 3
   speedAmp: 1
-  damagePoints: 47
+  damagePoints: 15
   moneyDropped: 999
   expDropped: 2200
-  maxHealthPoints: 3000
+  maxHealthPoints: 1200
   attackRange: 3
   attackSpeed: 0.5
   gameManager: {fileID: 0}

@@ -22,7 +22,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] public AudioMixer audioMixer;
     [SerializeField] private AudioSource buttonClickAudioSource;
     [SerializeField] private AudioClip buttonClickSound;
-
+    [SerializeField] public string sceneName;
     private const string PrefMusVolume = "pref_music_volume";
     private const string PrefSfxVolume = "pref_sfx_volume";
     private const string PrefFullscreen = "pref_fullscreen";
@@ -88,7 +88,7 @@ public class MenuManager : MonoBehaviour
 
     public void OnPlayClicked()
     {
-        SceneManager.LoadScene("Infinite Level");
+        SceneManager.LoadScene(sceneName);
     }
 
     public void OnExitClicked()
