@@ -33255,8 +33255,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   losePanel: {fileID: 326690016}
-  retryButton: {fileID: 168736373}
-  exitButton: {fileID: 2078634627}
+  retryButton: {fileID: 2078634627}
+  exitButton: {fileID: 168736373}
 --- !u!4 &944052030
 Transform:
   m_ObjectHideFlags: 0
@@ -85111,12 +85111,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667382742}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.08715578, w: 0.9961947}
-  m_LocalPosition: {x: 1.5, y: 15.22, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.08715578, w: 0.9961947}
+  m_LocalPosition: {x: 1.6301516, y: 7.7500005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1433205988}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10}
 --- !u!1 &1674122352
 GameObject:
@@ -139960,6 +139960,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2337568965945561207, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2070673160}
+    - targetCorrespondingSourceObject: {fileID: 2337568965945561207, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1667382745}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7058802017529973609, guid: ff1bf0123f8d3d645ae235f27541212c, type: 3}
       insertIndex: 12
@@ -140046,4 +140049,3 @@ SceneRoots:
   - {fileID: 1582938079}
   - {fileID: 1005714456}
   - {fileID: 944052030}
-  - {fileID: 1667382745}
